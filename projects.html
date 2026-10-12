@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-left">
+        <div class="brand-title"><span class="title">Welcome</span><span class="subtitle">bij mijn portofolio</span></div>
+    </div>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+    <div class="nav-links" id="primary-navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="./cv.html">CV</a>
+    </div>
+</nav>
+
+<main class="container projects-page">
+    <div class="card project-card">
+        <div class="projects-hero">
+            <div>
+                <p class="projects-kicker">Project selector</p>
+                <h1>Projecten</h1>
+                <p>Klik op een projectbox om alle informatie van dat project te tonen.</p>
+            </div>
+
+        </div>
+
+        <div class="projects-grid" role="tablist" aria-label="Projecten selecteren">
+            <button class="project-box is-active" type="button" data-project-target="project-1" aria-pressed="true">
+                <span class="project-box-number">Project 1</span>
+                <span class="project-box-title">Website voor voetbalclub KVV Rauw</span>
+                <span class="project-box-meta">CRUD • Dashboard • Clubwebsite</span>
+            </button>
+            <button class="project-box" type="button" data-project-target="project-2" aria-pressed="false">
+                <span class="project-box-number">Project 2</span>
+                <span class="project-box-title">Poutrel</span>
+                <span class="project-box-meta">Analyse • Prototype • Pilatesbedrijf</span>
+            </button>
+            <button class="project-box" type="button" data-project-target="project-3" aria-pressed="false">
+                <span class="project-box-number">Project 3</span>
+                <span class="project-box-title">Harmony Miku</span>
+                <span class="project-box-meta">Zelfstandig • UI Design • Muziek</span>
+            </button>
+            <button class="project-box" type="button" data-project-target="project-4" aria-pressed="false">
+                <span class="project-box-number">Project 4</span>
+                <span class="project-box-title">Tankbase</span>
+                <span class="project-box-meta">SQL • Database • Structuur</span>
+            </button>
+            <button class="project-box" type="button" data-project-target="project-5" aria-pressed="false">
+                <span class="project-box-number">Project 5</span>
+                <span class="project-box-title">Code Racer</span>
+                <span class="project-box-meta">Design • Python • Interactief</span>
+            </button>
+        </div>
+
+
+
+        <section class="project-item is-project-active" id="project-1" data-project-type="web" data-project-title="Website voor voetbalclub KVV Rauw" data-project-summary="Een volledige clubwebsite met CRUD, dashboard en duidelijke navigatie." data-project-image="img/Schermafbeelding 2026-04-27 110425.png" data-project-count="4">
+            <div class="project-content">
+                <p>
+                    <strong>Website:</strong>
+                    <a class="project-link" href="https://voetbal.kvv-rauw.be/" target="_blank" rel="noopener">https://voetbal.kvv-rauw.be/</a>
+                </p>
+
+                <div class="project-quick-stats">
+                    <span>CRUD</span>
+                    <span>Dashboard</span>
+                    <span>Clubwebsite</span>
+                </div>
+
+                <h3>Context en achtergrond</h3>
+                <p>
+                    Dit project werd gemaakt binnen het vak <strong>Skill2</strong>. Het doel was om een bruikbare,
+                    overzichtelijke website te bouwen voor KVV Rauw, zodat spelers, supporters en bezoekers snel de juiste info vinden.
+                </p>
+
+                <h3>Realisaties</h3>
+                <ul>
+                    <li>Een volledige clubwebsite uitgewerkt met duidelijke navigatie en relevante pagina's.</li>
+                    <li>CRUD-functionaliteiten gebouwd om inhoud gemakkelijk te beheren.</li>
+                    <li>Een dashboard opgezet en gekoppeld om updates en data centraal te beheren.</li>
+                    <li>Een praktische oplossing opgeleverd binnen een realistische, echte projectcontext.</li>
+                </ul>
+
+                <h3>Visuals</h3>
+                <div class="project-gallery">
+                    <img src="img/Schermafbeelding 2026-04-27 110425.png" alt="Screenshot KVV Rauw website - view 1" loading="lazy">
+                    <img src="img/Schermafbeelding 2026-04-27 110514.png" alt="Screenshot KVV Rauw website - view 2" loading="lazy">
+                    <img src="img/Schermafbeelding 2026-04-27 110541.png" alt="Screenshot KVV Rauw website - view 3" loading="lazy">
+                    <img src="img/Schermafbeelding 2026-04-27 110636.png" alt="Screenshot KVV Rauw website - view 4" loading="lazy">
+                </div>
+
+                <h3>Wat ik geleerd heb</h3>
+                <ul>
+                    <li><strong>Hard skills:</strong> CRUD uitwerken, dashboardontwikkeling, front-end structureren en een webproject opleveren.</li>
+                    <li><strong>Soft skills:</strong> samenwerken in team, verantwoordelijkheid nemen, communiceren en eisen vertalen naar werkende features.</li>
+                </ul>
+
+                <h3>Mijn bijdrage in het groepswerk</h3>
+                <p>
+                    In dit groepsproject was ik vooral verantwoordelijk voor de <strong>CRUD-functionaliteit</strong> en het <strong>dashboard</strong>.
+                    Ik heb vooral gefocust op stabiel en duidelijk contentbeheer voor de eindgebruikers.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-item" id="project-2" data-project-type="design web" data-project-title="Poutrel" data-project-summary="Analyse en prototype voor een pilatesbedrijf, met focus op een duidelijke conceptoplossing." data-project-image="img/Schermafbeelding 2026-04-30 091137.png" data-project-count="4">
+            <div class="project-content">
+                <h3>Context en achtergrond</h3>
+                <p>
+                    Poutrel was een project voor een pilatesbedrijf waarbij we een analyse en een prototype hebben uitgewerkt.
+                    Het doel was om de behoeften van de klant in kaart te brengen en die te vertalen naar een duidelijke, gebruiksvriendelijke conceptoplossing.
+                </p>
+
+                <div class="project-quick-stats">
+                    <span>Analyse</span>
+                    <span>Prototype</span>
+                    <span>Concept</span>
+                </div>
+
+                <h3>Realisaties</h3>
+                <ul>
+                    <li>Een analyse gemaakt van het pilatesbedrijf en de wensen van de doelgroep.</li>
+                    <li>Een prototype uitgewerkt om de structuur en gebruikersflow van het concept te tonen.</li>
+                    <li>Een visuele en functionele opzet gemaakt die als basis diende voor verdere ontwikkeling.</li>
+                    <li>Het project vertaald naar een helder en professioneel voorstel voor de klant.</li>
+                </ul>
+
+                <h3>Visuals</h3>
+                <div class="project-gallery">
+                    <img src="img/Schermafbeelding 2026-04-30 091137.png" alt="Poutrel screenshot - view 1" loading="lazy">
+                    <img src="img/Schermafbeelding 2026-04-30 091302.png" alt="Poutrel screenshot - view 2" loading="lazy">
+                    <img src="img/Schermafbeelding 2026-04-30 091335.png" alt="Poutrel screenshot - view 3" loading="lazy">
+                    <img src="img/Schermafbeelding 2026-04-30 091401.png" alt="Poutrel screenshot - view 4" loading="lazy">
+                </div>
+
+                <h3>Wat ik geleerd heb</h3>
+                <ul>
+                    <li><strong>Hard skills:</strong> analyseren van een klantvraag, prototyping en het structureren van een concept.</li>
+                    <li><strong>Soft skills:</strong> samenwerken, feedback verwerken, communiceren en ideeën duidelijk presenteren.</li>
+                </ul>
+
+                <h3>Mijn bijdrage</h3>
+                <p>
+                    Ik heb vooral meegewerkt aan de <strong>analyse</strong> en het <strong>prototype</strong>, met focus op een duidelijk en bruikbaar concept voor Poutrel.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-item" id="project-3" data-project-type="design web" data-project-title="Harmony Miku" data-project-summary="Een zelfgebouwde muziekwebsite met een sterke visuele stijl en volledige uitwerking." data-project-image="img/Schermafbeelding 2026-04-27 112322.png" data-project-count="4">
+            <div class="project-content">
+                <h3>Context en achtergrond</h3>
+                <p>
+                    Harmony Miku is een project binnen het vak <strong>Web Development</strong>. Dit project heb ik
+                    <strong>zelfstandig</strong> gemaakt met als doel een aantrekkelijke en gebruiksvriendelijke muziekluister-website te bouwen.
+                </p>
+
+                <div class="project-quick-stats">
+                    <span>Zelfstandig</span>
+                    <span>UI Design</span>
+                    <span>Muziek</span>
+                </div>
+
+                <h3>Realisaties</h3>
+                <ul>
+                    <li>Een volledige website ontworpen en gebouwd rond muziek beluisteren.</li>
+                    <li>Een consistente visuele stijl toegepast die past bij het thema van Harmony Miku.</li>
+                    <li>De volledige uitwerking alleen gedaan: van concept en design tot werkende website.</li>
+                </ul>
+
+                <h3>Visuals</h3>
+                <div class="project-gallery">
+                    <img src="img/Schermafbeelding 2026-04-27 112322.png" alt="Harmony Miku screenshot - view 1" loading="lazy">
+                    <img src="img/Schermafbeelding 2026-04-27 112416.png" alt="Harmony Miku screenshot - view 2" loading="lazy">
+                    <img src="img/Schermafbeelding 2026-04-27 112445.png" alt="Harmony Miku screenshot - view 3" loading="lazy">
+                    <img src="img/Schermafbeelding 2026-04-27 112514.png" alt="Harmony Miku screenshot - view 4" loading="lazy">
+                </div>
+
+                <h3>Wat ik geleerd heb</h3>
+                <ul>
+                    <li><strong>Hard skills:</strong> front-end uitwerking, UI-design, structuur van pagina's en visuele consistentie.</li>
+                    <li><strong>Soft skills:</strong> zelfstandig werken, plannen, keuzes onderbouwen en iteratief verbeteren.</li>
+                </ul>
+
+                <h3>Mijn bijdrage</h3>
+                <p>
+                    Dit project heb ik volledig alleen gerealiseerd: zowel het <strong>design</strong> als het <strong>bouwen van de website</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-item" id="project-4" data-project-type="data" data-project-title="Tankbase" data-project-summary="Een SQL-databaseproject met een duidelijke structuur en goed doordachte querylogica." data-project-image="img/Schermafbeelding 2026-04-27 113913.png" data-project-count="4">
+            <div class="project-content">
+                <h3>Context en achtergrond</h3>
+                <p>
+                    Tankbase is een <strong>SQL-databaseproject</strong> dat ik <strong>zelfstandig</strong> heb gemaakt.
+                    Het doel was om data rond tanks gestructureerd op te slaan, te beheren en efficient op te vragen via een duidelijke databankopbouw.
+                </p>
+
+                <div class="project-quick-stats">
+                    <span>SQL</span>
+                    <span>Database</span>
+                    <span>Structuur</span>
+                </div>
+
+                <h3>Realisaties</h3>
+                <ul>
+                    <li>Een relationele databankstructuur ontworpen met duidelijke tabellen en relaties.</li>
+                    <li>SQL-queries uitgewerkt voor toevoegen, aanpassen, verwijderen en opvragen van gegevens.</li>
+                    <li>De volledige uitwerking zelfstandig gedaan met focus op datakwaliteit en overzicht.</li>
+                </ul>
+
+                <h3>Visuals</h3>
+                <div class="project-gallery">
+                    <img src="img/Schermafbeelding 2026-04-27 113913.png" alt="Tankbase screenshot - view 1" loading="lazy">
+                    <img src="img/Schermafbeelding 2026-04-27 113958.png" alt="Tankbase screenshot - view 2" loading="lazy">
+                    <img src="img/Schermafbeelding 2026-04-27 114031.png" alt="Tankbase screenshot - view 3" loading="lazy">
+                    <img src="img/Schermafbeelding 2026-04-27 114055.png" alt="Tankbase screenshot - view 4" loading="lazy">
+                </div>
+
+                <h3>Wat ik geleerd heb</h3>
+                <ul>
+                    <li><strong>Hard skills:</strong> relationeel datamodel, SQL-querylogica, datavalidatie en databasebeheer.</li>
+                    <li><strong>Soft skills:</strong> zelfstandig analyseren, gestructureerd werken en nauwkeurig documenteren.</li>
+                </ul>
+
+                <h3>Mijn bijdrage</h3>
+                <p>
+                    Dit project heb ik volledig alleen uitgewerkt: van databankontwerp en querylogica tot de uiteindelijke oplevering.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-item" id="project-5" data-project-type="web design" data-project-title="Code Racer" data-project-summary="Een interactieve code-race website met een zelf ontworpen look-and-feel." data-project-image="img/Schermafbeelding 2026-04-27 110425.png" data-project-count="4">
+            <div class="project-content">
+                <h3>Context en achtergrond</h3>
+                <p>
+                    Code Racer was een project binnen de vakken <strong>skill1</strong>. Het doel was om
+                    een interactieve en gebruiksvriendelijke webervaring uit te werken rond het concept van een code-race.
+                </p>
+
+                <div class="project-quick-stats">
+                    <span>Design</span>
+                    <span>Python</span>
+                    <span>Interactief</span>
+                </div>
+
+                <h3>Realisaties</h3>
+                <ul>
+                    <li>De volledige visuele stijl en interface van het project ontworpen.</li>
+                    <li>De website volledig opgebouwd en uitgewerkt tot een werkende webomgeving.</li>
+                    <li>Een consistente en duidelijke gebruikerservaring gecreëerd met focus op structuur en design.</li>
+                </ul>
+
+                <h3>Wat ik geleerd heb</h3>
+                <ul>
+                    <li><strong>Hard skills:</strong> webdesign, front-end uitwerking en de koppeling tussen Python-logica en webinterface.</li>
+                    <li><strong>Soft skills:</strong> creatief probleemoplossend denken, plannen, communiceren en iteratief verbeteren.</li>
+                </ul>
+
+                <h3>Mijn bijdrage</h3>
+                <p>
+                    Voor dit project heb ik het <strong>volledige design</strong> gemaakt en de <strong>website gebouwd</strong>.
+                    Ik was verantwoordelijk voor de look-and-feel en de concrete uitwerking naar een bruikbaar eindresultaat.
+                </p>
+            </div>
+        </section>
+
+
+        <div class="accent"></div>
+    </div>
+</main>
+
+<!-- Site footer -->
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-left">@woutverheyen</div>
+        <div class="contacts">
+            <a href="https://github.com/woutverheyen" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/wout-verheyen-525223332/?skipRedirect=true" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a href="tel:+32468341128"><i class="bi bi-telephone"></i> +32 468 34 11 28</a>
+            <a href="mailto:wout.verheyen@telenet.be"><i class="bi bi-envelope"></i> wout.verheyen@telenet.be</a>
+        </div>
+        <div class="footer-right"></div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
