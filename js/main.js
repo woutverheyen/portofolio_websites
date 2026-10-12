@@ -120,14 +120,14 @@ async function loadSteamGames() {
     }
 
     if (!data) {
-        steamStatus.textContent = 'Steam data kon niet opgehaald worden (waarschijnlijk CORS in de browser). Open lokaal via een webserver of gebruik een backend/proxy.';
+        steamStatus.textContent = 'Steam data kon niet opgehaald worden.';
         return;
     }
 
     const games = data?.response?.games;
 
     if (!Array.isArray(games)) {
-        steamStatus.textContent = 'Kon games niet laden. Je profiel kan prive zijn of je SteamID is ongeldig.';
+        steamStatus.textContent = 'Kon games niet laden.';
         return;
     }
 
@@ -150,16 +150,7 @@ async function loadSteamGames() {
             cover.className = 'steam-game-cover';
             cover.alt = `${game.name} cover`;
             const headerUrl = `https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`;
-            const iconUrl = game.appid && game.img_icon_url
-                ? `https://media.steampowered.com/steamcommunity/public/images/apps/${game.appid}/${game.img_icon_url}.jpg`
-                : '';
             cover.src = headerUrl;
-            if (iconUrl) {
-                cover.onerror = () => {
-                    cover.onerror = null;
-                    cover.src = iconUrl;
-                };
-            }
 
             const meta = document.createElement('div');
             meta.className = 'steam-game-meta';
@@ -201,13 +192,12 @@ if (downloadLink && window.html2pdf) {
 
         downloadLink.setAttribute('aria-disabled', 'true');
         downloadLink.style.pointerEvents = 'none';
-        downloadLink.innerHTML = '<i class="bi bi-download"></i> PDF wordt gemaakt...';
+        downloadLink.innerHTML = 'PDF wordt gemaakt...';
 
         let exportHost = null;
         try {
             downloadLink.style.visibility = 'hidden';
 
-            // Render from an offscreen clone so the visible page does not flash.
             exportHost = document.createElement('div');
             exportHost.className = 'cv-export-host';
 
@@ -227,11 +217,7 @@ if (downloadLink && window.html2pdf) {
                     filename: fileName,
                     image: { type: 'jpeg', quality: 1 },
                     html2canvas: { scale: 3, useCORS: true, backgroundColor: '#ffffff', scrollY: 0 },
-                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-                    pagebreak: {
-                        mode: ['css', 'legacy'],
-                        avoid: ['.cv-header', '.cv-section', '.cv-timeline-item', '.cv-project-item']
-                    }
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
                 })
                 .from(exportClone)
                 .save();
@@ -242,7 +228,7 @@ if (downloadLink && window.html2pdf) {
             downloadLink.style.visibility = '';
             downloadLink.style.pointerEvents = '';
             downloadLink.removeAttribute('aria-disabled');
-            downloadLink.innerHTML = '<i class="bi bi-download"></i> Download CV als PDF';
+            downloadLink.innerHTML = 'Download CV als PDF';
         }
     });
 }
@@ -285,7 +271,6 @@ if (downloadLink && window.html2pdf) {
         });
     });
 
-    // Ensure a valid initial state.
     const initiallyActiveButton = projectButtons.find((btn) => btn.classList.contains('is-active')) || projectButtons[0];
     const initialTarget = initiallyActiveButton?.getAttribute('data-project-target');
     if (initialTarget && projects.some((section) => section.id === initialTarget)) {
@@ -293,61 +278,28 @@ if (downloadLink && window.html2pdf) {
     }
 })();
 
-// Click-to-enlarge lightbox for project screenshots
-(function initProjectLightbox() {
-    const galleryImages = document.querySelectorAll('.project-gallery img');
-    if (!galleryImages.length) {
-        return;
-    }
+// Subtiel inzoomen op de eigen locatie van de project-galerij afbeeldingen
+document.addEventListener("DOMContentLoaded", () => {
+    const projectImages = document.querySelectorAll(".project-gallery img");
 
-    const overlay = document.createElement('div');
-    overlay.className = 'lightbox-overlay';
-    overlay.setAttribute('aria-hidden', 'true');
-
-    const enlargedImage = document.createElement('img');
-    enlargedImage.className = 'lightbox-image';
-    enlargedImage.alt = '';
-
-    overlay.appendChild(enlargedImage);
-    document.body.appendChild(overlay);
-
-    function closeLightbox() {
-        overlay.classList.remove('is-open');
-        overlay.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('no-scroll');
-        enlargedImage.src = '';
-        enlargedImage.alt = '';
-    }
-
-    galleryImages.forEach((img) => {
-        img.setAttribute('tabindex', '0');
-
-        const openLightbox = () => {
-            enlargedImage.src = img.src;
-            enlargedImage.alt = img.alt || 'Vergrote projectafbeelding';
-            overlay.classList.add('is-open');
-            overlay.setAttribute('aria-hidden', 'false');
-            document.body.classList.add('no-scroll');
-        };
-
-        img.addEventListener('click', openLightbox);
-        img.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                openLightbox();
+    projectImages.forEach(img => {
+        img.addEventListener("click", (e) => {
+            e.stopPropagation(); 
+            
+            const isAlreadyZoomed = img.classList.contains("is-zoomed");
+            
+            // Haal de zoom bij alle andere afbeeldingen weg
+            projectImages.forEach(otherImg => otherImg.classList.remove("is-zoomed"));
+            
+            // Toggle de geklikte afbeelding
+            if (!isAlreadyZoomed) {
+                img.classList.add("is-zoomed");
             }
         });
     });
 
-    overlay.addEventListener('click', (event) => {
-        if (event.target === overlay) {
-            closeLightbox();
-        }
+    // Klik ergens anders op de pagina om de zoom te sluiten
+    document.addEventListener("click", () => {
+        projectImages.forEach(img => img.classList.remove("is-zoomed"));
     });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && overlay.classList.contains('is-open')) {
-            closeLightbox();
-        }
-    });
-})();
+});

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Wout Verheyen</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="contact-page">
+
+<nav class="navbar">
+    <div class="nav-left">
+        <div class="brand-title">
+            <span class="title">Welcome</span>
+            <span class="subtitle">bij mijn portfolio</span>
+        </div>
+    </div>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+    <div class="nav-links" id="primary-navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html" class="active">Contact</a>
+    </div>
+</nav>
+
+<main class="container">
+    <div class="card">
+        <h1>Contacteer mij</h1>
+        <p class="contact-intro">
+            Bent u geïnteresseerd in een samenwerking, heeft u een vraag over mijn projecten of wilt u meer informatie? U kunt mij bereiken via onderstaande kanalen of rechtstreeks het contactformulier invullen.
+        </p>
+
+        <div class="contact-layout">
+            <!-- Contactopties -->
+            <section class="contact-info" aria-labelledby="contact-info-title">
+                <h2 id="contact-info-title">Hoe kunt u mij bereiken?</h2>
+                <ul class="contact-methods-list">
+                    <li>
+                        <strong>E-mail:</strong>
+                        <a href="mailto:wout.verheyen@telenet.be">wout.verheyen@telenet.be</a>
+                    </li>
+                    <li>
+                        <strong>LinkedIn:</strong>
+                        <a href="https://www.linkedin.com/in/wout-verheyen-525223332/?skipRedirect=true" target="_blank" rel="noopener">Wout Verheyen op LinkedIn</a>
+                    </li>
+                    <li>
+                        <strong>GitHub:</strong>
+                        <a href="https://github.com/woutverheyen" target="_blank" rel="noopener">github.com/woutverheyen</a>
+                    </li>
+                    <li>
+                        <strong>Telefoon:</strong>
+                        <a href="tel:+32468341128">+32 468 34 11 28</a>
+                    </li>
+                    <li>
+                        <strong>Regio:</strong> Turnhout / Antwerpen, België
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Contactformulier -->
+            <section class="contact-form-section" aria-labelledby="form-title">
+                <h2 id="form-title">Stuur een bericht</h2>
+                <form action="#" method="post" class="contact-form">
+                    
+                    <div class="form-group">
+                        <label for="name">Naam <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Uw voor- en achternaam" 
+                            required 
+                            autocomplete="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mailadres <span class="required">*</span></label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="naam@voorbeeld.be" 
+                            required 
+                            autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefoonnummer (optioneel)</label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="+32 400 00 00 00" 
+                            autocomplete="tel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Onderwerp <span class="required">*</span></label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Kies een onderwerp...</option>
+                            <option value="job">Jobaanbod / Stage</option>
+                            <option value="freelance">Samenwerking / Project</option>
+                            <option value="question">Algemene vraag</option>
+                            <option value="other">Ander onderwerp</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Uw vraag of bericht <span class="required">*</span></label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="6" 
+                            placeholder="Schrijf hier uw bericht of vraag..." 
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Verstuur bericht</button>
+
+                </form>
+            </section>
+        </div>
+
+        <div class="accent"></div>
+    </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+   
+        <div class="contacts">
+            <a href="
